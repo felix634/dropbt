@@ -1,0 +1,41 @@
+---
+// IMPORTS CORRECTED: 3 levels deep requires '../../'
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout title={t('header.about_us')}>
+    <section class="container mx-auto px-6 py-20">
+        <h1 class="text-5xl font-extrabold text-gray-800 mb-8 animate-fade-in-down">
+            {t('header.about_us')}
+        </h1>
+        <p class="text-xl text-gray-600 mb-12 animate-fade-in-up-delay">
+            {t('hero.tagline')}
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-6 animate-fade-in-up-delay-2">
+                <h2 class="text-3xl font-bold text-drop-red">Our Mission</h2>
+                <p class="text-gray-700">
+                    Our mission is to empower businesses and individuals through exceptional digital communication, captivating design, and cutting-edge e-learning methodologies. We believe in continuous growth and delivering measurable results.
+                </p>
+
+                <h2 class="text-3xl font-bold text-drop-red pt-4">Our Values</h2>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>**Innovation:** Embracing new technologies and creative solutions.</li>
+                    <li>**Professionalism:** Maintaining the highest standards of quality and integrity.</li>
+                    <li>**Client-Centricity:** Tailoring solutions to meet specific client needs.</li>
+                    <li>**Excellence:** Striving for perfection in every delivery.</li>
+                </ul>
+            </div>
+            
+            <div class="animate-fade-in-up-delay-2 flex items-center justify-center">
+                
+            </div>
+        </div>
+
+    </section>
+</MainLayout>

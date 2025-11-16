@@ -1,0 +1,55 @@
+{
+  "header": {
+    "home": "Homepage",
+    "communication_design": "Communication & Design",
+    "what_we_do": "What We Do",
+    "project_flow": "Project Flow",
+    "references": "References",
+    "partners": "Partners",
+    "e_learnings": "E-Learnings",
+    "language_teaching": "Language Teaching",
+    "learning_types": "Learning Types",
+    "contact": "Contact",
+    "about_us": "About Us"
+  },
+  "hero": {
+    "welcome": "Welcome to Drop BT.",
+    "tagline": "Your partner for innovative Communication, Design & E-Learning Solutions."
+  },
+  "about": {
+    "title": "About Us",
+    "paragraph1": "Drop BT. is a dynamic and forward-thinking company dedicated to delivering high-quality communication, design, and e-learning services. With a focus on creativity, precision, and client satisfaction, we strive to exceed expectations in every project.",
+    "paragraph2": "Our team of experts is passionate about helping businesses grow and succeed by providing tailored solutions that resonate with their target audience. From captivating visual designs to engaging educational content, we cover all aspects to elevate your brand and knowledge base."
+  },
+  "footer": {
+    "company_name": "DROP Kereskedelmi és Szolgáltató Betéti Társaság",
+    "address": "H-2330 Dunaharaszti, Árpád street 3.",
+    "phone": "Tel: +49 162 463 1245",
+    "email": "info@drop-bt.eu"
+  },
+  "contact_page": {
+    "title": "Contact Us",
+    "description": "We'd love to hear from you! Please reach out with any questions or inquiries.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "managing_director": "Managing Director",
+    "communications": "Communications",
+    "imprint_title": "Imprint / Legal Information",
+    "imprint_text": "Information as per Section 4 of Act CVIII of 2001 on electronic commerce services and on certain issues related to the information society services.",
+    "registered_seat": "Registered seat",
+    "register_court": "Company register court",
+    "register_number": "Company registration number",
+    "vat_id": "VAT ID",
+    "web_host": "Web hosting provider"
+  },
+  "names": {
+    "szilvia": "Szilvia Droppa",
+    "zoltan": "Zoltan Bary",
+    "court": "Pest Megyei Bíróság Cégbírósága",
+    "host_name": "Rackhost Zrt.",
+    "reg_number": "13-06-021862",
+    "vat_number": "24569545-2-13"
+  }
+}

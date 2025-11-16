@@ -1,0 +1,53 @@
+---
+// IMPORTS CORRECTED: 4 levels deep requires '../../../'
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const submenuItems = [
+    { title: t('header.what_we_do'), href: `/${lang}/communication-design/what-we-do` },
+    { title: t('header.project_flow'), href: `/${lang}/communication-design/project-flow` },
+    { title: t('header.references'), href: `/${lang}/communication-design/references` },
+    { title: t('header.partners'), href: `/${lang}/communication-design/partners` }
+];
+---
+
+<MainLayout title={t('header.communication_design')}>
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6 text-center animate-fade-in-down">
+            <h1 class="text-5xl font-extrabold text-drop-red mb-3">
+                {t('header.communication_design')}
+            </h1>
+            <p class="text-xl text-gray-700">
+                Crafting impactful visual and verbal identities that capture attention and build trust.
+            </p>
+        </div>
+    </section>
+    
+    <section class="container mx-auto px-6 py-20">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-12 animate-fade-in-up">
+            Our Expertise at a Glance
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {submenuItems.map((item, index) => (
+                <a 
+                    href={item.href}
+                    class={`block p-6 bg-white rounded-lg shadow-xl border-t-4 border-drop-red hover:bg-red-50 transition-all duration-300 transform hover:scale-[1.03] opacity-0`}
+                    style={`animation: fadeInUp 0.8s ease-out ${0.2 * index}s forwards;`}
+                >
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">{item.title}</h3>
+                    <p class="text-gray-600 text-sm">
+                        {/* Placeholder descriptions for quick view */}
+                        {item.title === t('header.what_we_do') ? "Detailed services in branding, design, and web." : ""}
+                        {item.title === t('header.project_flow') ? "Step-by-step guide to our efficient process." : ""}
+                        {item.title === t('header.references') ? "View case studies and client successes." : ""}
+                        {item.title === t('header.partners') ? "Meet our trusted collaborators and network." : ""}
+                    </p>
+                </a>
+            ))}
+        </div>
+    </section>
+</MainLayout>

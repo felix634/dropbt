@@ -1,0 +1,83 @@
+---
+// IMPORTS CORRECTED: 3 levels deep requires '../../'
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout title={t('header.contact')}>
+    <section class="container mx-auto px-6 py-20">
+        <h1 class="text-5xl font-extrabold text-gray-800 mb-4 animate-fade-in-down">
+            {t('contact_page.title')}
+        </h1>
+        <p class="text-xl text-gray-600 mb-12 animate-fade-in-up-delay">
+            {t('contact_page.description')}
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            
+            <div class="md:col-span-2 bg-white p-8 rounded-lg shadow-xl animate-fade-in-up-delay-2">
+                <h2 class="text-2xl font-bold text-drop-red mb-6">Send Us a Message</h2>
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">{t('contact_page.name')}</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-drop-red focus:border-drop-red sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">{t('contact_page.email')}</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-drop-red focus:border-drop-red sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">{t('contact_page.message')}</label>
+                        <textarea id="message" name="message" rows="5" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-drop-red focus:border-drop-red sm:text-sm"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-drop-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-drop-red transition-colors duration-300">
+                            {t('contact_page.send')}
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="space-y-8 animate-fade-in-up-delay-2">
+                <div>
+                    <h2 class="text-2xl font-bold text-drop-red mb-4">Connect with us</h2>
+                    
+                    <p class="text-gray-700">For any question</p>
+                    <p class="text-lg text-red-600 mb-6"><a href={`mailto:${t('footer.email')}`} class="hover:underline">{t('footer.email')}</a></p>
+
+                    <p class="text-gray-700">Or call us</p>
+                    <p class="text-lg font-medium text-gray-800">{t('footer.phone')}</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">{t('names.szilvia')}</h3>
+                    <p class="text-drop-red">{t('contact_page.managing_director')}</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">{t('names.zoltan')}</h3>
+                    <p class="text-drop-red">{t('contact_page.communications')}</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-16 border-gray-300 animate-fade-in-up-delay-2" />
+
+        <div class="animate-fade-in-up-delay-2">
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-6">{t('contact_page.imprint_title')}</h2>
+            <div class="text-gray-700 space-y-3 max-w-4xl">
+                <p class="italic text-sm">{t('contact_page.imprint_text')}</p>
+                <p><strong>{t('contact_page.name')} of the service provider:</strong> {t('footer.company_name')}</p>
+                <p><strong>{t('contact_page.registered_seat')}:</strong> {t('footer.address')}</p>
+                <p><strong>{t('contact_page.email')} address:</strong> <a href={`mailto:${t('footer.email')}`} class="text-red-600 hover:underline">{t('footer.email')}</a></p>
+                <p><strong>{t('contact_page.register_court')}:</strong> {t('names.court')}</p>
+                <p><strong>{t('contact_page.register_number')}:</strong> {t('names.reg_number')}</p>
+                <p><strong>{t('contact_page.vat_id')}:</strong> {t('names.vat_number')}</p>
+                <p><strong>{t('contact_page.web_host')}:</strong> {t('names.host_name')}</p>
+            </div>
+        </div>
+    </section>
+</MainLayout>

@@ -1,0 +1,55 @@
+{
+  "header": {
+    "home": "Startseite",
+    "communication_design": "Kommunikation & Design",
+    "what_we_do": "Was wir tun",
+    "project_flow": "Projektfluss",
+    "references": "Referenzen",
+    "partners": "Partner",
+    "e_learnings": "E-Learnings",
+    "language_teaching": "Sprachunterricht",
+    "learning_types": "Lerntypen",
+    "contact": "Kontakt",
+    "about_us": "Über uns"
+  },
+  "hero": {
+    "welcome": "Willkommen bei Drop BT.",
+    "tagline": "Ihr Partner für innovative Kommunikations-, Design- & E-Learning-Lösungen."
+  },
+  "about": {
+    "title": "Über uns",
+    "paragraph1": "Drop BT. ist ein dynamisches und zukunftsorientiertes Unternehmen, das sich der Bereitstellung hochwertiger Kommunikations-, Design- und E-Learning-Dienstleistungen verschrieben hat. Mit Fokus auf Kreativität, Präzision und Kundenzufriedenheit streben wir danach, bei jedem Projekt die Erwartungen zu übertreffen.",
+    "paragraph2": "Unser Expertenteam hilft Unternehmen leidenschaftlich dabei, zu wachsen und erfolgreich zu sein, indem es maßgeschneiderte Lösungen anbietet, die bei ihrer Zielgruppe Anklang finden. Von fesselnden visuellen Designs bis hin zu ansprechenden Bildungsinhalten decken wir alle Aspekte ab, um Ihre Marke und Wissensbasis zu verbessern."
+  },
+  "footer": {
+    "company_name": "DROP Kereskedelmi és Szolgáltató Betéti Társaság",
+    "address": "H-2330 Dunaharaszti, Árpád utca 3.",
+    "phone": "Tel: +49 162 463 1245",
+    "email": "info@drop-bt.eu"
+  },
+  "contact_page": {
+    "title": "Kontaktieren Sie uns",
+    "description": "Wir freuen uns darauf, von Ihnen zu hören! Bitte kontaktieren Sie uns bei Fragen oder Anliegen.",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Nachricht senden",
+    "managing_director": "Geschäftsführerin",
+    "communications": "Kommunikation",
+    "imprint_title": "Impressum / Rechtliche Hinweise",
+    "imprint_text": "Informationen gemäß § 4 des Gesetzes CVIII von 2001 über elektronische Handelsdienstleistungen und bestimmte Fragen im Zusammenhang mit den Diensten der Informationsgesellschaft.",
+    "registered_seat": "Sitz",
+    "register_court": "Handelsregistergericht",
+    "register_number": "Handelsregisternummer",
+    "vat_id": "USt-ID",
+    "web_host": "Webhosting-Anbieter"
+  },
+  "names": {
+    "szilvia": "Szilvia Droppa",
+    "zoltan": "Zoltan Bary",
+    "court": "Pest Megyei Bíróság Cégbírósága",
+    "host_name": "Rackhost Zrt.",
+    "reg_number": "13-06-021862",
+    "vat_number": "24569545-2-13"
+  }
+}

@@ -1,0 +1,81 @@
+---
+// src/pages/[lang]/index.astro
+
+// All imports must use '../../' to reach the src/ root (src/ -> pages/ -> [lang]/)
+import MainLayout from '../../layouts/MainLayout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+// Get language from the URL (handled by the [lang] segment) and load translations
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<MainLayout title={t('header.home')}>
+    <HeroSection />
+
+    <section class="container mx-auto px-6 py-20">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-drop-red mb-4 animate-fade-in-up">
+                {t('about.title')}
+            </h2>
+            <div class="h-1 w-20 bg-red-500 mx-auto mb-10 animate-fade-in-up-delay"></div>
+
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed animate-fade-in-up-delay">
+                {t('about.paragraph1')}
+            </p>
+
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed animate-fade-in-up-delay-2">
+                {t('about.paragraph2')}
+            </p>
+
+            <div class="text-center mt-12 animate-fade-in-up-delay-2">
+                <a
+                    href={`/${lang}/about-us`}
+                    class="inline-block border border-drop-red text-drop-red hover:bg-drop-red hover:text-white px-8 py-3 rounded-md text-base font-semibold transition-all duration-300"
+                >
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <section class="container mx-auto px-6 py-20 bg-gray-50">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 animate-fade-in-up">
+            Our Core Services
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in-up-delay">
+                <div class="text-drop-red mb-4">
+                    
+                </div>
+                <h3 class="text-2xl font-semibold mb-3">
+                    {t('header.communication_design')}
+                </h3>
+                <p class="text-gray-600 mb-4">
+                    From branding and graphic design to comprehensive communication strategies, we craft visual identities that speak volumes.
+                </p>
+                <a href={`/${lang}/communication-design/`} class="text-drop-red hover:text-red-700 font-medium transition-colors duration-300">
+                    Explore Solutions &rarr;
+                </a>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-fade-in-up-delay-2">
+                <div class="text-drop-red mb-4">
+                    
+                </div>
+                <h3 class="text-2xl font-semibold mb-3">
+                    {t('header.e_learnings')}
+                </h3>
+                <p class="text-gray-600 mb-4">
+                    Develop engaging and effective e-learning modules, including language teaching and tailored content for various learning types.
+                </p>
+                <a href={`/${lang}/e-learnings/`} class="text-drop-red hover:text-red-700 font-medium transition-colors duration-300">
+                    View E-Learning Offerings &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+</MainLayout>

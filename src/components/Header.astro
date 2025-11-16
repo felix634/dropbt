@@ -1,0 +1,110 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const menuItems = [
+  { text: t('header.home'), href: `/${lang}/` },
+  {
+    text: t('header.communication_design'),
+    subItems: [
+      { text: t('header.what_we_do'), href: `/${lang}/communication-design/what-we-do` },
+      { text: t('header.project_flow'), href: `/${lang}/communication-design/project-flow` },
+      { text: t('header.references'), href: `/${lang}/communication-design/references` },
+      { text: t('header.partners'), href: `/${lang}/communication-design/partners` }
+    ]
+  },
+  {
+    text: t('header.e_learnings'),
+    subItems: [
+      { text: t('header.language_teaching'), href: `/${lang}/e-learnings/language-teaching` },
+      { text: t('header.learning_types'), href: `/${lang}/e-learnings/learning-types` }
+    ]
+  },
+  { text: t('header.contact'), href: `/${lang}/contact` },
+  { text: t('header.about_us'), href: `/${lang}/about-us` }
+];
+---
+
+<header class="bg-white shadow-lg sticky top-0 z-50 animate-fade-in-down">
+  <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center">
+      <a href={`/${lang}/`} class="flex-shrink-0">
+        <img src="/assets/logo.png" alt="Drop BT. Logo" class="h-16 w-auto" />
+      </a>
+    </div>
+    <div class="hidden md:flex items-center space-x-8">
+      {menuItems.map(item => (
+        <div class="relative group">
+          <a
+            href={item.href || '#'}
+            class="text-gray-700 hover:text-red-700 px-3 py-2 text-lg font-medium transition-colors duration-300"
+          >
+            {item.text}
+          </a>
+          {item.subItems && (
+            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out transform scale-95 group-hover:scale-100 origin-top">
+              <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                {item.subItems.map(subItem => (
+                  <a
+                    href={subItem.href}
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700 transition-colors duration-300"
+                    role="menuitem"
+                  >
+                    {subItem.text}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+      <LanguageSwitcher />
+    </div>
+
+    <div class="md:hidden flex items-center">
+      <LanguageSwitcher />
+      <button id="menu-button" class="text-gray-700 hover:text-red-700 focus:outline-none ml-4">
+        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg pb-4 animate-fade-in-up">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      {menuItems.map(item => (
+        <>
+          <a
+            href={item.href || '#'}
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-50 hover:text-red-700 transition-colors duration-300"
+          >
+            {item.text}
+          </a>
+          {item.subItems && (
+            <div class="ml-4 border-l border-gray-200">
+              {item.subItems.map(subItem => (
+                <a
+                  href={subItem.href}
+                  class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-red-50 hover:text-red-600 transition-colors duration-300"
+                >
+                  {subItem.text}
+                </a>
+              ))}
+            </div>
+          )}
+        </>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  document.getElementById('menu-button').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>

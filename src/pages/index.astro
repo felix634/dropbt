@@ -1,0 +1,12 @@
+---
+// src/pages/index.astro
+// This file is the site's entry point for the root path.
+import { getLangFromUrl, defaultLang } from '../i18n/utils';
+
+// Determine the language from the current URL path (will default to 'en' here)
+const lang = getLangFromUrl(Astro.url);
+
+// Redirect the user to the correct locale path (e.g., /en/)
+return Astro.redirect(`/${lang}/`);
+
+---

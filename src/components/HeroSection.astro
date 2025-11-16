@@ -1,0 +1,26 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="relative bg-gradient-to-r from-red-700 to-red-900 text-white py-24 md:py-32 overflow-hidden animate-fade-in">
+  <div class="absolute inset-0 z-0 opacity-20">
+    <div class="h-full w-full bg-cover bg-center" style="background-image: url('/assets/hero-bg.svg'); opacity: 0.1;"></div>
+  </div>
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up-slow">
+      {t('hero.welcome')}
+    </h1>
+    <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto animate-fade-in-up-delay">
+      {t('hero.tagline')}
+    </p>
+    <a
+      href={`/${lang}/contact`}
+      class="inline-block bg-white text-red-700 hover:bg-red-100 px-8 py-4 rounded-full text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out animate-fade-in-up-delay-2"
+    >
+      {t('header.contact')}
+    </a>
+  </div>
+</section>
